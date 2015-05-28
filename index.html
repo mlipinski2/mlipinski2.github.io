@@ -135,22 +135,40 @@
                         <div class="alert alert-info">
                             <strong>Mapka</strong> ponizej gdzie plywam:)
                         </div>
-                         <div id="map" class="map" style="height: 500px">
-                    	    <script>
-                            // create a map in the "map" div, set the view to a given place and zoom
-                            var map = L.map('map').setView([54.7728038, 18.4659424], 15);
-                            // add an OpenStreetMap tile layer
-                            L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-                            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                            }).addTo(map);
-                            // add a marker in the given location, attach some popup content to it and open the popup
-                            L.marker([54.772154, 18.465717]).addTo(map)
-                            .bindPopup('W tym miejscu plywam')
-                            .openPopup();
-	                        </script>
-	                        
-	                        
-	                 </div>
+                          
+		<div id="map" class="map" style="height: 500px">
+	<script>
+var map = L.map('map').setView([50.551, 18.701], 13);
+	L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+	}).addTo(map);
+var circle = L.circle([50.560, 18.721], 500, {
+    color: 'white',
+    fillColor: '#fff',
+    fillOpacity: 0.5
+}).addTo(map);
+circle.bindPopup("Tu plywam");
+var circle1 = L.circle([50.540, 18.711], 500, {
+    color: 'blue',
+    fillColor: '#401',
+    fillOpacity: 0.5
+}).addTo(map);
+circle1.bindPopup("i tu tez plywam");
+L.marker([50.555, 18.701]).addTo(map)
+    .bindPopup('tu ogolnie brykam na kite')
+    .openPopup();
+	var popup = L.popup();
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("Kliknąłeś w mapę koordynaty: " + e.latlng.toString())
+        .openOn(map);
+}
+map.on('click', onMapClick);
+	</script>
+
+        
+    </div>
                         <blockquote>
                             cos tam se wpisze
                         </blockquote>
