@@ -123,27 +123,27 @@
         <!-- END HOME SECION -->
         <!-- ABOUT SECION -->
         <section id="gdzie">
-        	<div id="map" class="map" style="height: 500px">
-                    	    <script>
-                            // create a map in the "map" div, set the view to a given place and zoom
-                            var map = L.map('map').setView([54.7728038, 18.4659424], 15);
-                            // add an OpenStreetMap tile layer
-                            L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-                            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                            }).addTo(map);
-                            // add a marker in the given location, attach some popup content to it and open the popup
-                            L.marker([54.7728038, 18.4659424]).addTo(map)
-                            .bindPopup('Tu se plywam:)')
-                            .openPopup();
-	                        </script>
-	                       </div>
+        	
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 abt-back-color">
                     <div class="divider-two"></div>
                     <h2 class="center">GDZIE <i class="fa fa-plus-circle"></i> PLYWAM?:)</h2>
                     <div class="divider-two margin-botom-50"></div>
                     <!-- ./Headings -->
-                         
+                         <div id="map" class="map" style="height: 500px">
+                    	    <script>
+                            // create a map in the "map" div, set the view to a given place and zoom
+                            var map = L.map('map').setView([54.7728038, 18.4659424], 13);
+                            // add an OpenStreetMap tile layer
+                            L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                            }).addTo(map);
+                            // add a marker in the given location, attach some popup content to it and open the popup
+                            L.marker([54.7728038, 18.4659424]).addTo(map)
+                            .bindPopup('Tu se plywam')
+                            .openPopup();
+	                        </script>
+	                       </div>
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                         <div class="alert alert-info">
                             <strong>tu bedzie mapa</strong> a moze z boku:)
